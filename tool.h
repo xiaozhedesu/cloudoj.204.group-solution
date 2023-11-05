@@ -2,6 +2,8 @@
 #define _TOOL_H
 
 #include <stdio.h>
+#define TRUE 1
+#define FALSE 0
 
 void wrap(int *a, int *b) {
 	//交换两个变量的值
@@ -45,6 +47,19 @@ int GCD(int num1, int num2) {
 	} else {
 		GCD(num2, dif);
 	}
+}
+
+int isPrime(int num) {
+	if(num <= 1) {
+		return FALSE;
+	}
+
+	for(int i = 2; i <= sqrt(num); i++) {
+		if(num % i == 0) {
+			return FALSE;
+		}
+	}
+	return TRUE;
 }
 
 #endif
